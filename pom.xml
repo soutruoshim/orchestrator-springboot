@@ -14,8 +14,22 @@
     <artifactId>orchestrator-springboot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
+
     <name>orchestrator-springboot</name>
     <description>orchestrator-springboot</description>
+
+    <modules>
+        <module>orchestrator-common</module>
+        <module>customer-payment</module>
+        <module>inventory-service</module>
+        <module>shipping-service</module>
+        <module>order-service</module>
+    </modules>
+
+    <properties>
+        <java.version>21</java.version>
+        <spring-cloud.version>2024.0.1</spring-cloud.version>
+    </properties>
 
     <url/>
     <licenses>
@@ -31,10 +45,6 @@
         <url/>
     </scm>
 
-    <properties>
-        <java.version>21</java.version>
-        <spring-cloud.version>2024.0.1</spring-cloud.version>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -45,6 +55,11 @@
     </dependencies>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.srhdp</groupId>
+                <artifactId>orchestrator-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
